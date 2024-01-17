@@ -1,0 +1,17 @@
+<div class="meta-main">
+  <div class="container">
+    <div class="list-btn mb-4">
+      <button (click)="changeContent('set1')">Basic HTML</button>
+      <button (click)="changeContent('set2')">OpenGraph </button>
+      <button (click)="changeContent('set3')">Site Identification</button>
+      <button (click)="changeContent('set4')">Apple </button>
+      <button (click)="changeContent('set5')">Internet Explorer </button>
+      <button ><a href="" style="color: #9c9c9c;">More Tags</a></button>
+    </div>
+    <div [innerHTML]="currentContent.html"></div>
+
+    <div class="list">
+    
+    </div>
+  </div>
+</div>

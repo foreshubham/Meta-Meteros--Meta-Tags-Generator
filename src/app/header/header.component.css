@@ -1,0 +1,213 @@
+.header-fixed {
+	background-color:#292c2f;
+	box-shadow:0 1px 1px #ccc;
+	padding: 20px 40px;
+	height: 80px;
+	color: #ffffff;
+	box-sizing: border-box;
+	top:-100px;
+   
+	-webkit-transition:top 0.3s;
+	transition:top 0.3s;
+}
+
+.header-fixed .header-limiter {
+    max-width: 1200px;
+	text-align: center;
+	margin: 0 auto;
+}
+.header-fixed .header-limiter a{
+    font-family: var(--kanit);
+
+}
+/*	The header placeholder. It is displayed when the header is fixed to the top of the
+	browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder{
+	height: 80px;
+	display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+	float: left;
+	font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+	color: #5383d3;
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+	font:16px Arial, Helvetica, sans-serif;
+	line-height: 40px;
+	float: right;
+}
+
+.header-fixed .header-limiter nav a{
+	display: inline-block;
+	padding: 0 5px;
+	text-decoration:none;
+	color: #ffffff;
+	opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover{
+	opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+	color: #608bd2;
+	pointer-events: none;
+	opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+	padding: 10px 40px;
+	height: 50px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+	display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+	line-height: 28px;
+	font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+	.header-fixed {
+		padding: 20px 0;
+		height: 75px;
+	}
+
+	.header-fixed .header-limiter h1 {
+		float: none;
+		margin: -8px 0 10px;
+		text-align: center;
+		font-size: 24px;
+		line-height: 1;
+	}
+
+	.header-fixed .header-limiter nav {
+		line-height: 1;
+		float:none;
+	}
+
+	.header-fixed .header-limiter nav a {
+		font-size: 13px;
+	}
+
+	body.fixed .header-fixed {
+		display: none;
+	}
+
+}
+/* Dark mode ON/OFF Button */
+
+ label {
+    margin-top: -50%;
+	width: 80px;
+	height: 35px;
+	position: relative;
+	display: block;
+	background: #ebebeb;
+	border-radius: 200px;
+	box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+		inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+	transition: 0.3s;
+	&:after {
+		content: "";
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		top: 2px;
+		left: 5px;
+		background: linear-gradient(180deg, #ffaa3b, #d8860b);
+		border-radius: 180px;
+		box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+		transition: 0.3s;
+	}
+	svg {
+		position: absolute;
+		width: 20px;
+		top: 5px;
+        left: 0px;
+		z-index: 100;
+		&.sun {
+			left: 6px;
+			fill: #fff;
+			transition: 0.3s;
+		}
+		&.moon {
+			left: 50px;
+			fill: #7e7e7e;
+			transition: 0.3s;
+		}
+	}
+}
+
+input {
+	width: 0;
+	height: 0;
+	visibility: hidden;
+	&:checked + label {
+		background: #242424;
+		&:after {
+			left: 70px;
+			transform: translateX(-100%);
+			background: linear-gradient(180deg, #777, #3a3a3a);
+		}
+		svg {
+			&.sun {
+				fill: #7e7e7e;
+			}
+			&.moon {
+				fill: #fff;
+			}
+		}
+		+ .background {
+			background: #242424;
+		}
+	}
+	&:active:after {
+		width: 260px;
+	}
+}
+
+/* .background {
+	width: 100vw;
+	height: 100vh;
+	background: #fff;
+	z-index: -1;
+	position: absolute;
+	transition: 0.3s;
+} */

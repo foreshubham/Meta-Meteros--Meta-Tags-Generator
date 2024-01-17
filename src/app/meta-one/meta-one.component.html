@@ -1,0 +1,41 @@
+<div class="hero">
+
+    <div class="context">
+        <div class="green">
+            <h2>Enter Website URL</h2>
+            <p>We make your site Extra Ordinary.</p>
+            <form [formGroup]="websiteForm">
+                <div class="input">
+                    <input type="text" id="websiteUrl" formControlName="websiteUrl"  placeholder="https://metameteors.seo">
+                    <button class="proceed" type="button" (click)="generateMetaTags()">Proceed</button>
+                   
+                   <!-- To handel errors -->
+                   
+                    <!-- <div *ngIf="websiteForm.get('websiteUrl').hasError('pattern')">
+                        Please enter a valid URL (e.g., http://example.com)
+                    </div> -->
+                
+                </div>
+            </form>
+            </div>
+        <div class="orange"></div>
+        <div class="yellow"></div>
+    </div>
+
+
+<div class="area" >
+            <ul class="circles">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul>
+    </div >
+    
+</div>

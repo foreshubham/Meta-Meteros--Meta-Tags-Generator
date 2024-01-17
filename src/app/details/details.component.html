@@ -1,0 +1,72 @@
+<div class="main">
+  <p class="head-para">We need some details in order to generate meta tags for your awesome website :) </p>
+  <div class="container row main-row">
+      <div class="col-sm-6 main-col1">
+          <div class="title">
+              <p>Site Name: <span>60</span> </p>
+              <input type="text" placeholder="Your Site Name">
+             </div>
+          
+             <div class="description">
+              <p>Site Description:<span>160</span> </p>
+              <textarea name="" id="" cols="10" rows="10" placeholder="Description of your website, short and simple to attract audience. It is one of the most important stuff."></textarea>
+             </div>
+             <div>
+              <label for="imageUrl">Image URL:</label>
+              <input type="text" id="imageUrl" [(ngModel)]="imageUrl" placeholder="Enter Image URL" />
+            
+              <label for="fileUpload">Upload Image:</label>
+              <input type="file" id="fileUpload" (change)="onFileChange($event)" />
+            
+              <!-- <div *ngIf="imageUrl || selectedFile">
+                <h4>Preview:</h4>
+                <img *ngIf="imageUrl" [src]="imageUrl" alt="Image from URL" />
+                <img *ngIf="selectedFile" [src]="selectedFileUrl" alt="Uploaded Image" />
+              </div> -->
+            </div>
+             <div class="keywords">
+              <p>Keywords: <span>Recomended less than 10</span> </p>
+              <input type="text" placeholder="Your Site Name">
+             </div>
+          
+             <div class="author">
+              <p>Copyright / Author: <span>60</span> </p>
+              <input type="text" placeholder="Your Site Name">
+             </div>
+      </div>
+
+      <!-- Preview Section -->
+
+      <div class="col-sm-6 main-col2">
+        
+        <h3 class="text-center text-light">Preview</h3>
+
+        <div class="google">
+          <p>This is how your site appear on google.</p>
+          <span>https://metameteors.seo :</span>
+          <h5 class="text-light">metameteor - Meta tags for SEO.</h5>
+          <span>Generate meta tags in one click for the best SEO of your website, rank high in search results, and appear unique when someone shares your link!</span>
+        </div>
+        <div class="fb">
+          <p>This is how your website will look on Facebook.</p>
+          <div *ngIf="imageUrl || selectedFile">
+            <h4>Preview:</h4>
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Image from URL" />
+            <img *ngIf="selectedFile" [src]="selectedFileUrl" alt="Uploaded Image" />
+          </div>
+        </div>
+      </div>
+  </div>
+
+</div>
+
+
+<!--     
+    <label for="url">Enter Website URL:</label>
+    <input type="url" id="url" placeholder="https://example.com" ngModel [(ngModel)]="websiteUrl">
+    <button (click)="fetchDetails()">Submit</button>
+    <div id="details">
+      <p>Favicon:</p>
+      <img *ngIf="faviconUrl" [src]="faviconUrl" alt="Favicon">
+      <p *ngIf="nameBeforeDot">Name before the dot: {{ nameBeforeDot }}</p>
+    </div> -->
